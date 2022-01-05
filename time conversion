@@ -1,0 +1,14 @@
+  public static String timeConversion(String s) {
+    // Write your code here
+    int h = Integer.parseInt(s.substring(0,2));
+    String t = "";
+    if ((0<h && h<12) && s.contains("PM")) {
+        t = Integer.toString(h + 12).concat(s.substring(2,s.length()-2));
+    } else if (h==12 && s.contains("AM")){
+        t = "00".concat(s.substring(2,s.length()-2));
+    } else {
+        t = s.substring(0,s.length()-2);
+    }
+        return t;
+    }
+}
